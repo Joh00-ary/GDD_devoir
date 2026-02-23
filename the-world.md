@@ -1,7 +1,5 @@
 
 
-Créateur : Rabetsimialona Johary Lalaina
-
 The World : Primal Dawn (GDD)
 
 Table of content (WIP : Work In Progress)
