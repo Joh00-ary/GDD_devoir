@@ -1,6 +1,6 @@
 
 
-The World : Primal Dawn (GDD)
+The World (GDD)
 
 Table of content (WIP : Work In Progress)
 
@@ -92,9 +92,10 @@ Cela ne dépend pas du personnage que l'on a pris mais des stats que l'on a choi
 
 Explorer → Récolter → Crafter (Outil ou autre ressource) → Construire → Survivre → Progression → Explorer
 
+
 * Thème
 
-Préhistoire réaliste, brutale, organique, Logique.
+Préhistoire réaliste, Logique.
 
 ![](data:image/png;base64...)
 
