@@ -1,0 +1,409 @@
+# Livrable 2 — Préparation des ressources et de l’environnement technique
+## Projet : The World
+
+## Objectif
+En s’appuyant sur le GDD de **The World**, préparer l’ensemble des **ressources visuelles**, **ressources sonores** et **l’environnement technique** nécessaires au développement du jeu.
+
+**The World** est un jeu de survie sandbox préhistorique sur PC, orienté exploration, récolte, artisanat, construction, survie réaliste et combat primitif.  
+Ce livrable vise à poser une base exploitable pour la production du prototype et du MVP.
+
+---
+
+# 1 — Design de l’environnement
+
+## Objectif
+Produire les **tiles**, éléments visuels et composants graphiques qui serviront à représenter le monde du jeu.
+
+L’environnement de **The World** doit refléter une ambiance :
+- préhistorique,
+- naturelle,
+- brute,
+- cohérente,
+- lisible pour le gameplay.
+
+## Éléments visuels à produire
+
+### Sols / terrain
+Créer les tuiles ou éléments visuels nécessaires pour représenter :
+- herbe
+- terre
+- pierre
+- sable éventuel
+- eau
+- zones sombres ou nuit
+- neige (si prévue dans le scope)
+- variantes de terrain pour éviter la répétition visuelle
+
+### Décors
+Préparer les éléments de décor du monde :
+- arbres
+- buissons
+- rochers
+- troncs
+- herbes hautes
+- falaises simples
+- éléments naturels d’ambiance
+
+### Obstacles
+Produire les éléments bloquants ou semi-bloquants :
+- gros rochers
+- arbres massifs
+- souches
+- murs naturels
+- éléments construits rudimentaires
+
+### Arrière-plans / ambiance
+Selon le type d’affichage retenu dans le prototype, préparer :
+- arrière-plan simple pour zones extérieures
+- variations de lumière selon le moment de la journée
+- overlays éventuels pour brouillard, obscurité ou ambiance climatique
+
+### Objets interactifs
+Créer les visuels des éléments avec lesquels le joueur pourra interagir :
+- ressource bois
+- ressource pierre
+- buisson de baies
+- point d’eau
+- feu de camp
+- table primitive
+- coffre ou stockage simple
+- abri rudimentaire
+
+## Contraintes graphiques
+Les éléments visuels doivent :
+- respecter une **palette de couleurs cohérente**
+- conserver une **direction artistique homogène**
+- utiliser des **dimensions standardisées**
+- être compatibles avec une intégration simple dans Pygame
+- rester lisibles même dans des scènes peu détaillées
+
+## Standardisation recommandée
+À documenter dans le projet :
+- taille des tuiles, par exemple : `32x32`, `48x48` ou `64x64`
+- format d’image utilisé, par exemple : `.png`
+- convention de nommage des fichiers
+- organisation des dossiers d’assets
+
+## Si génération procédurale
+Si le projet utilise une génération procédurale ou semi-procédurale, fournir :
+- plusieurs variantes de tuiles de sol
+- variantes de ressources
+- variantes de décors
+- éléments de transition visuelle entre biomes ou terrains
+
+---
+
+# 2 — Personnages et animations
+
+## Objectif
+Produire les **sprite sheets** ou ensembles d’animations nécessaires aux personnages et entités du jeu.
+
+Dans **The World**, les entités principales sont :
+- le joueur
+- les animaux passifs
+- les prédateurs / créatures hostiles
+- éventuellement certains objets animés (feu, eau)
+
+## Personnages à couvrir
+
+### Joueur
+Prévoir au minimum un personnage jouable représentant l’univers préhistorique :
+- homme et/ou femme
+- tenue primitive simple
+- silhouette lisible
+- cohérence avec le monde visuel
+
+### Entités animales
+Prévoir des sprites ou animations pour :
+- un animal passif / proie
+- un animal hostile / prédateur
+
+Exemples possibles :
+- mammifère préhistorique simple
+- loup / félin / créature inspirée de la préhistoire
+- petit animal récoltable ou chassable
+
+### Objets animés
+Prévoir, si possible :
+- animation du feu
+- eau animée simple
+- effet de fumée
+
+## Animations minimales à produire
+Chaque entité doit disposer au minimum, selon son rôle, des animations suivantes :
+
+### Joueur
+- idle
+- déplacement / marche
+- action principale :
+  - récolte
+  - attaque
+  - interaction
+- mort ou état KO si prévu
+
+### Animal passif
+- idle
+- déplacement
+- fuite
+- mort / destruction
+
+### Animal hostile
+- idle
+- déplacement
+- attaque
+- mort / destruction
+
+### Objets animés
+- feu allumé
+- feu faible / extinction si utilisé
+- eau animée simple si présente
+
+## Contraintes techniques
+Les sprites doivent :
+- avoir un **format uniforme**
+- respecter une **résolution homogène**
+- conserver une **échelle cohérente** entre les entités
+- être facilement intégrables dans un système d’animation Pygame
+
+## Documentation attendue
+Documenter pour chaque sprite sheet :
+- nom de l’entité
+- dimensions d’une frame
+- nombre de frames
+- cadence d’animation
+- directions couvertes :
+  - gauche
+  - droite
+  - haut
+  - bas
+  - ou vue simplifiée selon le projet
+
+Exemple de documentation :
+- `player_walk.png`
+- frame : `64x64`
+- 6 frames
+- 8 FPS
+- directions : gauche / droite
+
+---
+
+# 3 — Bibliothèque sonore
+
+## Objectif
+Constituer une bibliothèque sonore minimale cohérente avec l’ambiance de **The World**.
+
+L’univers sonore doit renforcer :
+- l’immersion
+- la tension
+- l’ambiance sauvage
+- la solitude
+- la survie
+
+## Sons minimum à prévoir
+
+### Effets sonores des actions principales
+Préparer au minimum les sons suivants :
+- pas sur herbe
+- pas sur pierre
+- récolte bois
+- récolte pierre
+- prise d’objet
+- crafting
+- allumage du feu
+- feu qui crépite
+- consommation nourriture
+- consommation eau
+- attaque mêlée
+- impact
+- mort joueur ou blessure
+- interaction UI simple
+
+### Sons d’ambiance
+Préparer des boucles ou effets d’ambiance pour :
+- vent
+- nature / extérieur
+- bruissement de broussailles
+- ambiance nocturne
+- présence animale lointaine
+- zone dangereuse éventuelle
+
+### Musique
+Prévoir au moins une piste musicale d’ambiance correspondant à l’univers :
+- percussions primitives
+- ambiance tribale discrète
+- musique de tension légère
+- ou piste ambient minimaliste
+
+## Contraintes de format
+Les fichiers doivent être compatibles avec **Pygame** :
+
+- **WAV** pour les effets sonores
+- **OGG** pour la musique
+
+## Organisation recommandée
+Exemple de dossiers :
+- `assets/audio/sfx/`
+- `assets/audio/music/`
+- `assets/audio/ambient/`
+
+## Documentation attendue
+Chaque ressource sonore doit être listée avec :
+- nom du fichier
+- fonction dans le jeu
+- durée approximative
+- source ou outil utilisé pour la produire
+
+---
+### 1. Une arborescence de projet claire
+L’organisation du projet doit être conforme à l’architecture prévue pour **The World**.
+
+
+```text
+the-world/
+├─ assets/
+│  ├─ images/
+│  │  ├─ tiles/
+│  │  ├─ player/
+│  │  ├─ animals/
+│  │  ├─ objects/
+│  │  └─ ui/
+│  ├─ audio/
+│  │  ├─ sfx/
+│  │  ├─ music/
+│  │  └─ ambient/
+│  └─ fonts/
+├─ src/
+│  ├─ main.py
+│  ├─ settings.py
+│  ├─ player.py
+│  ├─ world.py
+│  ├─ ui.py
+│  ├─ resources.py
+│  ├─ audio_manager.py
+│  └─ utils.py
+├─ requirements.txt
+├─ README.md
+└─ .gitignore
+```
+
+### 2. Un fichier `requirements.txt`
+Le fichier doit être fonctionnel et permettre d’installer les dépendances nécessaires.
+
+Exemple minimal :
+```txt
+pygame
+```
+
+### 3. Un script `main.py`
+Le projet doit contenir un script principal qui :
+- lance une fenêtre Pygame,
+- affiche au minimum une scène simple,
+- charge au moins :
+  - une tuile de terrain,
+  - un sprite de joueur ou une entité animée,
+- fonctionne sans erreur après installation.
+
+### 4. Un `README.md`
+Le dépôt doit inclure un fichier `README.md` expliquant clairement :
+- le concept du jeu
+- l’installation
+- la commande de lancement
+- l’arborescence du projet
+- les sources des assets
+- les outils utilisés
+
+---
+
+# Consignes importantes
+
+## Origine des assets
+Les assets peuvent être :
+- créés à la main,
+- générés par IA,
+- récupérés depuis des banques libres de droits,
+- ou produits à partir d’un mélange de ces approches.
+
+Dans tous les cas, il faut **documenter clairement** :
+- la source de chaque asset,
+- l’outil utilisé,
+- les éventuelles modifications apportées.
+
+## Cohérence visuelle
+La cohérence visuelle entre tous les éléments est essentielle.  
+Même si les assets proviennent de sources différentes, ils doivent paraître appartenir au même jeu.
+
+Pour **The World**, il faut viser :
+- un style homogène,
+- une palette naturelle,
+- une lisibilité du gameplay,
+- une cohérence d’échelle entre les ressources, le joueur et les décors.
+
+## Environnement technique fonctionnel
+L’environnement de développement doit être immédiatement testable.
+
+La commande suivante doit fonctionner sans erreur :
+
+```bash
+pip install -r requirements.txt
+python main.py
+```
+
+Le lancement doit afficher au minimum :
+- une fenêtre Pygame,
+- un fond ou une tuile de terrain,
+- un élément graphique visible à l’écran,
+- idéalement un sprite de joueur ou une animation simple
+
+---
+
+# Application au jeu The World
+
+## Priorités visuelles
+Pour le MVP de **The World**, les ressources à produire en priorité sont :
+
+### Terrain
+- herbe
+- terre
+- pierre
+- eau
+
+### Ressources
+- bois
+- pierre
+- baies
+- feu de camp
+
+### Personnage
+- joueur idle
+- joueur marche
+- joueur interaction
+
+### Entités
+- un animal passif
+- un animal hostile
+
+### UI
+- barres de survie
+- inventaire simple
+- éléments d’interface minimalistes
+
+## Priorités sonores
+Pour le MVP, les sons prioritaires sont :
+- pas
+- récolte bois
+- récolte pierre
+- feu
+- consommation
+- attaque
+- ambiance nature
+- musique d’ambiance simple
+
+## Priorités techniques
+Pour le MVP, l’environnement doit permettre :
+- l’ouverture d’une fenêtre Pygame
+- l’affichage du joueur
+- l’affichage d’un terrain
+- un déplacement simple
+- une interaction de base avec une ressource
+
+---
